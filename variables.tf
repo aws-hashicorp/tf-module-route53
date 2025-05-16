@@ -9,7 +9,7 @@ variable "tags" {
 }
 
 # Route53 variables
-variable "zone_id" {
+variable "zone_name" {
   description = "The ID of the Route53 zone"
   type        = string
 }
@@ -17,4 +17,10 @@ variable "zone_id" {
 variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
+}
+
+variable "description" {
+  description = "The description of the Route53 zone"
+  type        = string
+  default     = "Private Route53 zone"
 }
