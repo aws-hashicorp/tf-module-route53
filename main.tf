@@ -10,7 +10,7 @@ resource "aws_route53_zone" "private_zone" {
   comment       = "Private Route53 zone"
   force_destroy = false
 
-  depends_on = [ var.vpc_id ]
+  depends_on = [var.vpc_id]
 
   tags = var.tags
 }
