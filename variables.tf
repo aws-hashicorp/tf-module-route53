@@ -40,6 +40,12 @@ variable "record_name" {
   default     = ""
 }
 
+variable "zone_id" {
+  description = "The ID of the Route53 zone to create the record in"
+  type        = string
+  default     = ""
+}
+
 variable "record_type" {
   description = "The type of the Route53 record"
   type        = string

@@ -20,7 +20,7 @@ resource "aws_route53_zone" "private_zone" {
 # Route53 Record
 resource "aws_route53_record" "record" {
   count   = var.create_records ? 1 : 0
-  zone_id = aws_route53_zone.private_zone.id
+  zone_id = var.create_records ? aws_route53_zone.private_zone[0].zone_id : var.zone_id
   name    = var.record_name
   type    = var.record_type
   ttl     = var.record_ttl
