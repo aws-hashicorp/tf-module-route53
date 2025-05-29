@@ -24,3 +24,31 @@ variable "description" {
   type        = string
   default     = "Private Route53 zone"
 }
+
+# Route53 Record variables
+variable "record_name" {
+  description = "The name of the Route53 record"
+  type        = string
+}
+
+variable "record_type" {
+  description = "The type of the Route53 record"
+  type        = string
+}
+
+variable "record_ttl" {
+  description = "The TTL of the Route53 record"
+  type        = number
+  default     = 300
+}
+
+variable "record_values" {
+  description = "The values of the Route53 record"
+  type        = list(string)
+}
+
+variable "create_records" {
+  description = "Whether to create Route53 records"
+  type        = bool
+  default     = false
+}
