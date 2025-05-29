@@ -4,7 +4,6 @@
  */
 # Route53 Zone
 resource "aws_route53_zone" "private_zone" {
-  count = var.create_zones ? 1 : 0
   name  = var.zone_name
   vpc {
     vpc_id = var.vpc_id
@@ -15,16 +14,4 @@ resource "aws_route53_zone" "private_zone" {
   depends_on = [var.vpc_id]
 
   tags = var.tags
-}
-
-# Route53 Record
-resource "aws_route53_record" "record" {
-  count   = var.create_records ? 1 : 0
-  zone_id = var.create_records ? aws_route53_zone.private_zone[0].zone_id : var.zone_id
-  name    = var.record_name
-  type    = var.record_type
-  ttl     = var.record_ttl
-  records = var.record_values
-
-  depends_on = [aws_route53_zone.private_zone]
 }
