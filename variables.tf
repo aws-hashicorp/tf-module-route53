@@ -9,6 +9,12 @@ variable "tags" {
 }
 
 # Route53 variables
+variable "create_zones" {
+  description = "Whether to create Route53 zones"
+  type        = bool
+  default     = true
+}
+
 variable "zone_name" {
   description = "The ID of the Route53 zone"
   type        = string
