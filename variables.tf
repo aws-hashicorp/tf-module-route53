@@ -35,11 +35,13 @@ variable "description" {
 variable "record_name" {
   description = "The name of the Route53 record"
   type        = string
+  default     = ""
 }
 
 variable "record_type" {
   description = "The type of the Route53 record"
   type        = string
+  default     = "A"
 }
 
 variable "record_ttl" {
