@@ -18,11 +18,13 @@ variable "create_zones" {
 variable "zone_name" {
   description = "The ID of the Route53 zone"
   type        = string
+  default     = "example.com"
 }
 
 variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
+  default     = ""
 }
 
 variable "description" {
@@ -53,6 +55,7 @@ variable "record_ttl" {
 variable "record_values" {
   description = "The values of the Route53 record"
   type        = list(string)
+  default     = []
 }
 
 variable "create_records" {
